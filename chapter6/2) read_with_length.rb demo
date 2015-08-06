@@ -1,0 +1,14 @@
+2) read_with_length.rb demo
+- odd: (use tail to print sth): not untill I "sudo lsof -nP -iTCP:4481 -sTCP:LISTEN" and kill pid the box in subl won't output anything
+- fixed: use irb
+- 1st: irb -r <filename>
+- 2nd: tail ... cmd in another terminal window
+- 3rd: then log will print out(so can I say fuck sublime text?)
+	note: even if ctrl+z shut down tail, the ruby program won't exit!
+- 4th: lsof, kill, then terminated
+
+Q: according to the book, this should not happend!
+
+3) echo gekko | nc localhost 4481
+- echo gekko while natcat localhost 4481: as I see it.
+
