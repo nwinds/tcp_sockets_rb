@@ -19,15 +19,25 @@ module CloudHash
 		end
 
 		# write then read
-		def request(string)
-			# create a new connection for each request
-			@connection.puts(string)
-			# read untill recieving new line reply
-			@connection.gets
+		def request(payload)
+			begin
+				# pack
+				msg_length = payload.size
+				packed_msg_length = [msg_length].pack('i')
+
+				# write
+				@connection.write(packed_msg_length)
+				@connection.write(payload)
+				# read
+				@connection.read				
+			rescue Errno::EPIPE
+			end
 		end
 	end
 end
+				
 
+								
 # does 'localhost' also an API?
 client = CloudHash::Client.new('localhost', 4481)
 
