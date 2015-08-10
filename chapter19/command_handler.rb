@@ -12,7 +12,7 @@ module FTP
 			@pwd || Dir.pwd
 		end
 
-		def handler(data)
+		def handle(data)
 			cmd = data[0..3].strip.upcase
 			options = data[4..-1].strip
 
