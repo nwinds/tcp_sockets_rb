@@ -6,7 +6,7 @@ module CloudHash
 		def initialize(port)
 			# ruby packed server socket
 			@server = TCPServer.new(port)  
-			puts 'Listening on port #{@server\.local_address\.ip_port}' 
+			puts 'Listening on port #{@server.local_address.ip_port}' 
 			@storage = {}
 		end
 		
