@@ -1,0 +1,45 @@
+#chapter 23 - preforking
+1) FTP
+- is this (only response to STSINT) anything do with user_group's access avalability?
+2) preforking
+- parent & single child => parent(be the daddy) & many children
+- heavy cost(for many task), and large waste(for single task)
+
+#chapter 24 - thread pool
+-> seems better?
+1) ri ThreadGroup
+(from ruby core)
+------------------------------------------------------------------------------
+ThreadGroup provides a means of keeping track of a number of threads as a
+group. A Thread can belong to only one ThreadGroup at a time; adding a thread
+to a new group will remove it from any previous group.
+
+Newly created threads belong to the same group as the thread from which they
+were created.
+------------------------------------------------------------------------------
+-> does this mean 'threadpool' => I think... yes. 
+-> ThreadGroup is a impl for thread pool concept: to get to know much more detail, you may try to implement it in c - more lower layer focusing 
+-> ruby's 'end' syntax is fucking insane!
+-> 再次强调：不要用sublimetext运行ruby！
+
+#chapter 25 - EDP(event driven programming)
+1) ruby grammar
+- & 最近一次与正则表达式匹配的字符串
+- ruby map
+	-> 个人认为用ruby block放在一起理解要好一些（简直鬼畜）
+2) about EDP
+-> Actually, I think its similiar to game programming(actually, I may write game code in open source to free myself from cv/cg design, hahaha)
+-> 我个人认为事件驱动的话，或许用图形化编程手段可能更好（状态机的描述——我的偏爱）
+
+* .<editing_file_name>.txt.swp, and interesting file while using vim
+3) class Connection
+- important!
+- 用Connection类保证进程之间的隔离
+- 事件驱动是单线程的：所有基于进程的模式都使用进程隔离连接（保证无论何时都由单个独立的进程处理单个连接，所以每个连接基本上都是由一个进程描述）
+-> 注意：这里被坑了爹（其实是一个pid：至少以现在的代码运行是如此：不知道是程序出错接受不了其他连接发送的数据，还是怎么==//）
+
+4) about FTP
+- still lots of stuff confusing(may need some refernces on HOWTO use FTP in terminal)
+-> a little tired(and now its closer to the end of the book! time to use python, soon: as a warmup I may say)
+ 
+ 
