@@ -33,7 +33,7 @@ message = "GET / HTTP/1.1\r\n\r\n"
 
 try:
 	#Set the whole thing
-	s.send(message)
+	s.sendall(message)
 except socket.error:
 	#Send failure
 	print "Send failed"
@@ -41,4 +41,10 @@ except socket.error:
 
 print "Message sent successfully"
 
+four_bytes = 4096
+reply = s.recv(four_bytes)
 
+print reply
+
+# close socket
+s.close()
